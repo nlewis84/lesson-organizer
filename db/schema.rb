@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20210109175909) do
 
-  create_table "bands", force: :cascade do |t|
+  create_table "ensembles", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

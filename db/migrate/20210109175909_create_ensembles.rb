@@ -1,6 +1,6 @@
-class CreateBands < ActiveRecord::Migration
+class CreateEnsembles < ActiveRecord::Migration
   def change
-    create_table :bands do |t|
+    create_table :ensembles do |t|
       t.string :name
       t.timestamps null: false
     end
