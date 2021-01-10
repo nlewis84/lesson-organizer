@@ -1,1 +1,14 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Edit Teacher</h1>
+
+<form action="/teachers/<%= @teacher.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <label for="name">Teacher Name: </label>
+    <input type="text" name="teacher[name]" value="<%= @teacher.name %>">
+    <br>
+    <br>
+    <label for="username">Username: </label>
+    <input type="text" name="teacher[username]" value="<%= @teacher.username %>">
+    <br>
+    <br>
+    <input type="submit" value="Update Teacher">
+</form>

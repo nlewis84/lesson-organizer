@@ -1,1 +1,16 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h1><%= @teacher.name %></h1>
+<p>List of all students who study with <%= @teacher.name %>.</p>
+
+<% @teacher.lessons.each do |l| %>
+<div>
+    <h3><%= l.student.name %></h3>
+    <p><%= l.student.email %><br>
+    <%= l.student.grade %>th Grade<br>
+    <%= l.campus %><br>
+    <%= l.day %><br>
+    <%= l.time %></p>
+</div>
+<% end %>
+<a href="/teachers/<%= @teacher.id%>/edit">
+    <button>Edit Teacher</button>
+</a>

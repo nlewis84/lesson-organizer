@@ -44,6 +44,14 @@ class ApplicationController < Sinatra::Base
       !!session[:user_id]
     end
 
+    def admin?
+      !!session[:admin]
+    end
+
+    def user_has_access?
+      session[:teacher_id] == params[:id]
+    end
+
     def current_user
       Teacher.find(session[:teacher_id])
     end

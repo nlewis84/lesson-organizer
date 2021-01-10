@@ -1,1 +1,18 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Edit Student</h1>
+
+<form action="/students/<%= @student.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <label for="name">Student Name: </label>
+    <input type="text" name="student[name]" value="<%= @student.name %>">
+    <br>
+    <br>
+    <label for="grade">Grade: </label>
+    <input type="text" name="student[grade]" value="<%= @student.grade %>">
+    <br>
+    <br>
+    <label for="email">Email: </label>
+    <input type="text" name="student[email]" value="<%= @student.email %>">
+    <br>
+    <br>
+    <input type="submit" value="Update Student">
+</form>

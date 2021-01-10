@@ -1,37 +1,52 @@
 class TeachersController < ApplicationController
 
-  # GET: /teachers
+  # Teacher Role
   get "/teachers" do
     erb :"/teachers/index.html"
   end
 
-  # GET: /teachers/new
+  # Admin Role
   get "/teachers/new" do
     erb :"/teachers/new.html"
   end
 
-  # POST: /teachers
+  # Admin Role
   post "/teachers" do
+    @teacher = Teacher.create(params)
+    session[:teacher_id] = @teacher.id
     redirect "/teachers"
   end
 
-  # GET: /teachers/5
+  # Teacher Role
   get "/teachers/:id" do
+    @teacher = Teacher.find(params[:id])
     erb :"/teachers/show.html"
   end
 
-  # GET: /teachers/5/edit
+  # Teacher Role
   get "/teachers/:id/edit" do
-    erb :"/teachers/edit.html"
+    @teacher = Teacher.find(params[:id])
+    ## Check for Admin rights
+    # if admin? 
+       erb :"/teachers/edit.html"
+    # end
+
+    ## If not Admin, check that this user has access
+    # if user_has_access?
+    #   erb :"/teachers/edit.html"
+    # else
+    #   erb :"/failure.html"
+    # end
   end
 
-  # PATCH: /teachers/5
   patch "/teachers/:id" do
-    redirect "/teachers/:id"
+    @teacher = Teacher.find(params[:id])
+    @teacher.update(params[:teacher])
+    redirect "/teachers/#{@teacher.id}"
   end
 
-  # DELETE: /teachers/5/delete
-  delete "/teachers/:id/delete" do
-    redirect "/teachers"
-  end
+  ## Admin Role
+  # delete "/teachers/:id/delete" do
+  #   redirect "/teachers"
+  # end
 end

@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20210109175909) do
 
   create_table "lessons", force: :cascade do |t|
     t.string   "campus"
+    t.string   "day"
     t.string   "time"
     t.integer  "teacher_id"
     t.integer  "student_id"

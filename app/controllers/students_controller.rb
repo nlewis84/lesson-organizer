@@ -1,37 +1,38 @@
 class StudentsController < ApplicationController
 
-  # GET: /students
   get "/students" do
     erb :"/students/index.html"
   end
 
-  # GET: /students/new
   get "/students/new" do
     erb :"/students/new.html"
   end
 
-  # POST: /students
   post "/students" do
-    redirect "/students"
+    @student = Student.create(params)
+    redirect "/students/#{@student.id}"
   end
 
-  # GET: /students/5
   get "/students/:id" do
+    @student = Student.find(params[:id])
     erb :"/students/show.html"
   end
 
-  # GET: /students/5/edit
   get "/students/:id/edit" do
+    @student = Student.find(params[:id])
     erb :"/students/edit.html"
   end
 
-  # PATCH: /students/5
   patch "/students/:id" do
-    redirect "/students/:id"
+    @student = Student.find(params[:id])
+    @student.update(params[:student])
+    redirect "/students/#{@student.id}"
   end
 
-  # DELETE: /students/5/delete
+  # Should also delete any lessons of this student
   delete "/students/:id/delete" do
+    @student = Student.find(params[:id])
+    @student.delete
     redirect "/students"
   end
 end
