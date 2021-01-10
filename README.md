@@ -1,4 +1,4 @@
-# Band Organizer
+# Lesson Organizer
 
 ## Usage
 
