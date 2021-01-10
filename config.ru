@@ -5,6 +5,6 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 run ApplicationController
+use LessonsController
 use StudentsController
-use EnsemblesController
 use TeachersController

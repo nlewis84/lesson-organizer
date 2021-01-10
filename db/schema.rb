@@ -13,8 +13,11 @@
 
 ActiveRecord::Schema.define(version: 20210109175909) do
 
-  create_table "ensembles", force: :cascade do |t|
-    t.string   "name"
+  create_table "lessons", force: :cascade do |t|
+    t.string   "campus"
+    t.string   "time"
+    t.integer  "teacher_id"
+    t.integer  "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -22,16 +25,18 @@ ActiveRecord::Schema.define(version: 20210109175909) do
   create_table "students", force: :cascade do |t|
     t.string   "name"
     t.integer  "grade"
-    t.string   "instrument"
     t.string   "email"
+    t.integer  "teacher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "teachers", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "username"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

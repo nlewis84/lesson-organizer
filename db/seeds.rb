@@ -1,0 +1,18 @@
+Teacher.create!(name: 'Nathan Lewis', username: 'Nathan_Lewis', password_digest: "#{Teacher.digest('drums123')}" )
+Teacher.create!(name: 'John Smith', username: 'John_Smith', password_digest: "#{Teacher.digest('trumpet123')}" )
+Teacher.create!(name: 'Prithi Gupta', username: 'Prithi_Gupta', password_digest: "#{Teacher.digest('oboe123')}" )
+
+Student.create!(name: 'Janelle Roberts', grade: 9, email: 'janelle@school.com', teacher_id: 1 )
+Student.create!(name: 'Luke Mayfield', grade: 10, email: 'luke@school.com', teacher_id: 3 )
+Student.create!(name: 'Bruce Weathers', grade: 11, email: 'bruce@school.com', teacher_id: 1 )
+Student.create!(name: 'Cindy Wallace', grade: 12, email: 'cindy@school.com', teacher_id: 2 )
+Student.create!(name: 'Margaret Zhou', grade: 9, email: 'margaret@school.com', teacher_id: 3 )
+
+Lesson.create(campus: "Rickroll MS", time: "10:00", teacher_id: 1, student_id: 3)
+Lesson.create(campus: "Rickroll MS", time: "11:30", teacher_id: 2, student_id: 4)
+Lesson.create(campus: "Rickroll MS", time: "3:00", teacher_id: 3, student_id: 5)
+Lesson.create(campus: "Johnson HS", time: "3:30", teacher_id: 1, student_id: 1)
+Lesson.create(campus: "Johnson HS", time: "9:30", teacher_id: 1, student_id: 3)
+Lesson.create(campus: "Johnson HS", time: "11:00", teacher_id: 2, student_id: 4)
+Lesson.create(campus: "Johnson HS", time: "6:30", teacher_id: 3, student_id: 2)
+Lesson.create(campus: "Johnson HS", time: "4:00", teacher_id: 3, student_id: 5)
