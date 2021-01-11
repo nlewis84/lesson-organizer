@@ -14,5 +14,28 @@
     <input type="text" name="student[email]" value="<%= @student.email %>">
     <br>
     <br>
+    <h3>Current Admin</h3>
+    <% Admin.all.each do |a| %>
+        <input type="radio" name="student[admin_id]" id="<%= a.id %>" value="<%= a.id %>" <%='checked' if @student.admin_id == a.id %>><%= a.name %> - <%= a.students.first.lessons.first.campus %></input><br>
+    <% end %>
+    <br>
+    <h3>Create a Lesson</h3>
+    <label for="lesson[time]">Time: </label>
+    <input type="text" name="lesson[time]">
+    <br>
+    <br>
+    <label for="lesson[day]">Day: </label>
+    <input type="text" name="lesson[day]">
+    <br>
+    <br>
+    <h4>Campus</h4>
+    <% Lesson.select('DISTINCT campus').each do |l| %>
+        <input type="radio" name="lesson[campus]" value="<%= l.campus %>" <%='checked' if @student.lessons.first.campus == l.campus %>><%= l.campus %></input><br>
+    <% end %>
+    <br>
+    <h4>Current Lesson Teachers</h4>
+    <% Teacher.all.each do |t| %>
+        <input type="radio" name="lesson[teacher_id]" id="<%= t.id %>" value="<%= t.id %>"><%= t.name %> - <%= t.lessons.first.campus %></input><br>
+    <% end %>
     <input type="submit" value="Update Student">
 </form>

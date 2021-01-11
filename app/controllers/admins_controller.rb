@@ -1,6 +1,7 @@
 class AdminsController < ApplicationController
 
   get '/admins/home' do
+    binding.pry
     @admin = Admin.find(session[:admin_id])
     erb :'/admins/home.html'
   end
