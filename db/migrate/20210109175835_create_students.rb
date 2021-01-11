@@ -5,6 +5,7 @@ class CreateStudents < ActiveRecord::Migration
       t.integer :grade
       t.string :email
       t.integer :teacher_id
+      t.integer :admin_id
       t.timestamps null: false
     end
   end
