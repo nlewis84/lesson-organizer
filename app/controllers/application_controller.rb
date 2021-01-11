@@ -5,43 +5,21 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+    enable :sessions
+    set :session_secret, "lesson"
   end
 
   get "/" do
-    erb :index
-  end
-
-  get '/account' do
-    @teacher = Teacher.find(session[:teacher_id])
-    erb :account
-  end
-
-  get "/login" do
-    erb :login
-  end
-
-  post "/login" do
-    @teacher = Teacher.find_by(username: params[:username])
-    if @teacher
-      session[:teacher_id] = @teacher.id
-      redirect '/account'
-    else
-      redirect '/failure'
-    end
+    redirect '/success'
   end
 
   get "/failure" do
     erb :failure
   end
 
-  get "/logout" do
-    session.clear
-    redirect "/"
-  end
-
   helpers do
     def logged_in?
-      !!session[:user_id]
+      !!session[:admin_id]
     end
 
     def admin?
@@ -53,7 +31,16 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_user
-      Teacher.find(session[:teacher_id])
+      Admin.find(session[:admin_id])
+    end
+
+    def user_notification
+      if logged_in?
+        @user = Admin.find(session[:admin_id])
+        "Logged in as #{@user.name}"
+      else
+        "Not currently logged in."
+      end
     end
   end
 

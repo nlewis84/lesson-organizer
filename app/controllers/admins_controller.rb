@@ -1,37 +1,35 @@
 class AdminsController < ApplicationController
 
-  # GET: /admins
-  get "/admins" do
-    erb :"/admins/index.html"
+  get '/admins/home' do
+    @admin = Admin.find(session[:admin_id])
+    erb :'/admins/home.html'
   end
 
-  # GET: /admins/new
-  get "/admins/new" do
-    erb :"/admins/new.html"
+  get "/login" do
+    erb :login
   end
 
-  # POST: /admins
-  post "/admins" do
-    redirect "/admins"
+  post "/login" do
+    @admin = Admin.find_by(email: params[:email])
+
+    if @admin && @admin.authenticate(params[:password])
+      session[:admin_id] = @admin.id
+      redirect '/success'
+    else
+      redirect '/login'
+    end
   end
 
-  # GET: /admins/5
-  get "/admins/:id" do
-    erb :"/admins/show.html"
-  end
+  get "/success" do
+    if logged_in?
+			redirect "/admins/home"
+		else
+			redirect "/login"
+		end
+	end
 
-  # GET: /admins/5/edit
-  get "/admins/:id/edit" do
-    erb :"/admins/edit.html"
-  end
-
-  # PATCH: /admins/5
-  patch "/admins/:id" do
-    redirect "/admins/:id"
-  end
-
-  # DELETE: /admins/5/delete
-  delete "/admins/:id/delete" do
-    redirect "/admins"
+  get "/logout" do
+    session.clear
+    redirect "/"
   end
 end

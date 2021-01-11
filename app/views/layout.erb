@@ -11,12 +11,17 @@
 
 <body>
     <div class="wrapper">
-
+        <div class="notification">
+            <%= user_notification %>
+            <br>
+            <a href="/success"><button>Home</button></a>
+            <a href="/logout"><button>Log Out</button></a>
+        </div>
         <%= yield %>
 
         <footer class="branding">
             <small>&copy; 2021 <strong>Lesson Organizer</strong></small>
-        </footer>
+        </footer>    
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>

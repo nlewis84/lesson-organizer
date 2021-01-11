@@ -1,6 +1,5 @@
 class TeachersController < ApplicationController
 
-  # Teacher Role
   get "/teachers" do
     erb :"/teachers/index.html"
   end
@@ -17,26 +16,14 @@ class TeachersController < ApplicationController
     redirect "/teachers"
   end
 
-  # Teacher Role
   get "/teachers/:id" do
     @teacher = Teacher.find(params[:id])
     erb :"/teachers/show.html"
   end
 
-  # Teacher Role
   get "/teachers/:id/edit" do
     @teacher = Teacher.find(params[:id])
-    ## Check for Admin rights
-    # if admin? 
-       erb :"/teachers/edit.html"
-    # end
-
-    ## If not Admin, check that this user has access
-    # if user_has_access?
-    #   erb :"/teachers/edit.html"
-    # else
-    #   erb :"/failure.html"
-    # end
+    erb :"/teachers/edit.html"
   end
 
   patch "/teachers/:id" do
@@ -45,8 +32,11 @@ class TeachersController < ApplicationController
     redirect "/teachers/#{@teacher.id}"
   end
 
-  ## Admin Role
-  # delete "/teachers/:id/delete" do
-  #   redirect "/teachers"
-  # end
+  # Admin Role
+  delete "/teachers/:id/delete" do
+    @teacher = Teacher.find(params[:id])
+    # @teacher.lessons.delete
+    @teacher.delete
+    redirect "/teachers"
+  end
 end

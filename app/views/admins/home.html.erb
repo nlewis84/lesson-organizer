@@ -1,0 +1,31 @@
+<h1>Welcome, <%= @admin.name%>!</h1>
+
+<div class="teachers">
+<h2>Teachers</h2>
+
+<% @admin.teachers.all.each do |t| %>
+    <a href="/teachers/<%= t.id %>">
+        <div>
+            <%= t.name %>
+            <br>
+            <br>
+        <div>
+    </a>
+    <% end %>
+    <a href="/teachers/new">
+        <button>Add a New Teacher</button>
+    </a>
+</div>
+
+<div class="students">
+<h2>Students</h2>
+    <% @admin.students.all.each do |s| %>
+    <a href="/students/<%= s.id %>">
+        <div>
+            <%= s.name %>
+            <br>
+            <br>
+        <div>
+    </a>
+    <% end %>
+</div>

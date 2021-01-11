@@ -32,6 +32,7 @@ class StudentsController < ApplicationController
   # Should also delete any lessons of this student
   delete "/students/:id/delete" do
     @student = Student.find(params[:id])
+    # @student.lessons.delete
     @student.delete
     redirect "/students"
   end
