@@ -10,7 +10,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    redirect '/success'
+     if logged_in?
+	 		redirect "/admins/home"
+	 	else
+	 		redirect "/login"
+	 	end
   end
 
   helpers do
@@ -18,6 +22,7 @@ class ApplicationController < Sinatra::Base
       !!session[:admin_id]
     end
 
+    # Old code....can probably delete....look around to make sure.
     def admin?
       !!session[:admin]
     end

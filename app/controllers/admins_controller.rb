@@ -24,14 +24,16 @@ class AdminsController < ApplicationController
 	# end
 
   get "/logout" do
-    session.clear
-    redirect "/"
+    if logged_in?
+      session.destroy
+			redirect "/login"
+	 	else
+	 		redirect "/"
+	 	end
+  
   end
 
-  get "/failure" do
-    erb :failure
-  end
-
+  # This may need to get moved further up the file
   get '/admins/home' do
     @admin = Admin.find(session[:admin_id])
     erb :'/admins/home.html'
