@@ -35,8 +35,12 @@ class AdminsController < ApplicationController
 
   # This may need to get moved further up the file
   get '/admins/home' do
-    @admin = Admin.find(session[:admin_id])
-    erb :'/admins/home.html'
+    if logged_in?
+      @admin = Admin.find(session[:admin_id])
+      erb :'/admins/home.html'
+    else
+      redirect '/login'
+    end
   end
 
 end
