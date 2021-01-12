@@ -2,8 +2,9 @@
 <p>Edit or delete this lesson below</p>
 
 <div>
-    <h3><%= @lesson.teacher.name %></h3>
-    <p><%= @lesson.campus %><br>
+    <h3>Student: <%= @lesson.student.name %></h3>
+    <p><%= @lesson.teacher.name %><br>
+    <%= @lesson.campus %><br>
     <%= @lesson.day %><br>
     <%= @lesson.time %></p>
 </div>
