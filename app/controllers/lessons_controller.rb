@@ -10,7 +10,7 @@ class LessonsController < ApplicationController
 
   post "/lessons" do
     @lesson = Lesson.create(params)
-    redirect "/lessons"
+    redirect "/admins/home"
   end
 
   get "/lessons/:id" do

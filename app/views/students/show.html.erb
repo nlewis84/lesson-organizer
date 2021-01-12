@@ -3,14 +3,19 @@
 
 <% @student.lessons.each do |l| %>
 <div>
-    <h3><%= l.teacher.name %></h3>
-    <p><%= l.campus %><br>
-    <%= l.day %><br>
-    <%= l.time %></p>
+  <h3><%= l.teacher.name %></h3>
+  <p><%= l.campus %><br>
+  <%= l.day %><br>
+  <%= l.time %></p>
 </div>
 <% end %>
 <a href="/students/<%= @student.id%>/edit">
-    <button>Edit Student</button>
+  <button>Edit Student</button>
+</a>
+<br>
+<br>
+<a href="/lessons/new">
+  <button>Add a New Lesson</button>
 </a>
 <br>
 <br>
