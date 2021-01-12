@@ -2,7 +2,7 @@
 
 <% Lesson.all.each do |l| %>
 <div>
-    <a href="/students/<%= l.id %>">
+    <a href="/lessons/<%= l.id %>">
         <h3><%= l.student.name %></h3>
     </a>
     <p><%= l.teacher.name %><br>
