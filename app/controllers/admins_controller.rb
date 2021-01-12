@@ -1,5 +1,23 @@
 class AdminsController < ApplicationController
 
+  get "/signup" do
+    if logged_in?
+      redirect '/admins/home'
+    else
+      erb :"/admins/new.html"
+    end
+  end
+
+  post '/signup' do
+    if params[:name] == "" || params[:campus] == "" || params[:email] == "" || params[:password] == ""
+      redirect to '/signup'
+    else
+      @admin = Admin.create(:name => params[:name], :campus => params[:campus], :email => params[:email], :password => params[:password])
+      session[:admin_id] = @admin.id
+      redirect to '/admins/home'
+    end
+  end
+
   get "/login" do
     erb :login
   end
