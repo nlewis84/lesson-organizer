@@ -1,39 +1,67 @@
 class TeachersController < ApplicationController
 
   get "/teachers" do
-    erb :"/teachers/index.html"
+    if logged_in?
+      erb :"/teachers/index.html"
+    else
+      redirect "/login"
+    end
   end
 
   get "/teachers/new" do
-    erb :"/teachers/new.html"
+    if logged_in?
+      erb :"/teachers/new.html"
+    else
+      redirect "/login"
+    end
   end
 
   post "/teachers" do
-    @teacher = Teacher.create(params)
-    # session[:teacher_id] = @teacher.id
-    redirect "/teachers"
+    if logged_in?
+      @teacher = Teacher.create(params)
+      # session[:teacher_id] = @teacher.id
+      redirect "/teachers"
+    else
+      redirect "/login"
+    end
   end
 
   get "/teachers/:id" do
-    @teacher = Teacher.find(params[:id])
-    erb :"/teachers/show.html"
+    if logged_in?
+      @teacher = Teacher.find(params[:id])
+      erb :"/teachers/show.html"
+    else
+      redirect "/login"
+    end
   end
 
   get "/teachers/:id/edit" do
-    @teacher = Teacher.find(params[:id])
-    erb :"/teachers/edit.html"
+    if logged_in?
+      @teacher = Teacher.find(params[:id])
+      erb :"/teachers/edit.html"
+    else
+      redirect "/login"
+    end
   end
 
   patch "/teachers/:id" do
-    @teacher = Teacher.find(params[:id])
-    @teacher.update(params[:teacher])
-    redirect "/teachers/#{@teacher.id}"
+    if logged_in?
+      @teacher = Teacher.find(params[:id])
+      @teacher.update(params[:teacher])
+      redirect "/teachers/#{@teacher.id}"
+    else
+      redirect "/login"
+    end
   end
 
   delete "/teachers/:id/delete" do
-    @teacher = Teacher.find(params[:id])
-    # @teacher.lessons.delete
-    @teacher.delete
-    redirect "/teachers"
+    if logged_in?
+      @teacher = Teacher.find(params[:id])
+      # @teacher.lessons.delete
+      @teacher.delete
+      redirect "/teachers"
+    else
+      redirect "/login"
+    end
   end
 end
