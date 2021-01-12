@@ -4,15 +4,13 @@ class TeachersController < ApplicationController
     erb :"/teachers/index.html"
   end
 
-  # Admin Role
   get "/teachers/new" do
     erb :"/teachers/new.html"
   end
 
-  # Admin Role
   post "/teachers" do
     @teacher = Teacher.create(params)
-    session[:teacher_id] = @teacher.id
+    # session[:teacher_id] = @teacher.id
     redirect "/teachers"
   end
 
@@ -32,7 +30,6 @@ class TeachersController < ApplicationController
     redirect "/teachers/#{@teacher.id}"
   end
 
-  # Admin Role
   delete "/teachers/:id/delete" do
     @teacher = Teacher.find(params[:id])
     # @teacher.lessons.delete

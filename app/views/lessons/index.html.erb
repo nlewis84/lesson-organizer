@@ -1,1 +1,18 @@
-<h1>This is the Model's index page.</h1>
+<h1>Lessons</h1>
+
+<% Lesson.all.each do |l| %>
+<div>
+    <a href="/students/<%= l.id %>">
+        <h3><%= l.student.name %></h3>
+    </a>
+    <p><%= l.teacher.name %><br>
+    <%= l.campus %><br>
+    <%= l.day %><br>
+    <%= l.time %></p>
+</div>
+<% end %>
+<br>
+<br>
+<a href="/students/new">
+    <button>New Student</button>
+</a>

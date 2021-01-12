@@ -27,6 +27,7 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @student.update(params[:student])
 
+    # move to lessons.new
     # if !params[:lesson][:time].empty? && !params[:lesson][:day].empty? && !params[:lesson][:campus].empty? && !params[:lesson][:teacher_id].empty?
     #   @student.lessons << Lesson.create(params[:lesson])
     # end
