@@ -1,20 +1,27 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<h1>New Lesson</h1>
 
-<h3>Create a Lesson</h3>
-<label for="lesson[time]">Time: </label>
-<input type="text" name="lesson[time]">
-<br>
-<br>
-<label for="lesson[day]">Day: </label>
-<input type="text" name="lesson[day]">
-<br>
-<br>
-<h4>Campus</h4>
-<% Admin.all.each do |a| %>
-    <input type="radio" name="lesson[campus]" value="<%= a.campus %>" <%='checked' if !@student.admin.campus.empty? && @student.admin.campus == a.campus %>><%= a.campus %></input><br>
-<% end %>
-<br>
-<h4>Current Lesson Teachers</h4>
-<% Teacher.all.each do |t| %>
-    <input type="radio" name="lesson[teacher_id]" id="<%= t.id %>" value="<%= t.id %>"><%= t.name %> - <%= t.admin.campus %></input><br>
-<% end %>
+<form action="/lessons" method="POST">
+    <label for="time">Time: </label>
+    <input type="text" name="time">
+    <br>
+    <br>
+    <label for="day">Day: </label>
+    <input type="text" name="day">
+    <br>
+    <br>
+    <h4>Campus</h4>
+    <% Admin.all.each do |a| %>
+        <input type="radio" name="campus" value="<%= a.campus %>"><%= a.campus %></input><br>
+    <% end %>
+    <br>
+    <h4>Current Lesson Teachers</h4>
+    <% Teacher.all.each do |t| %>
+        <input type="radio" name="teacher_id" id="<%= t.id %>" value="<%= t.id %>"><%= t.name %> - <%= t.admin.campus %></input><br>
+    <% end %>
+    <br>
+    <h4>Current Students</h4>
+    <% Student.all.each do |s| %>
+        <input type="radio" name="student_id" id="<%= s.id %>" value="<%= s.id %>"><%= s.name %></input><br>
+    <% end %>
+    <input type="submit" value="Submit" id="submit">
+</form>
