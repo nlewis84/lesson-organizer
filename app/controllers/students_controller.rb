@@ -1,47 +1,68 @@
 class StudentsController < ApplicationController
 
   get "/students" do
-    erb :"/students/index.html"
+    if logged_in?
+      erb :"/students/index.html"
+    else
+      redirect "/login"
+    end
   end
 
   get "/students/new" do
-    erb :"/students/new.html"
+    if logged_in?
+      erb :"/students/new.html"
+    else
+      redirect "/login"
+    end
   end
 
   post "/students" do
-    @student = Student.create(params)
-    redirect "/students/#{@student.id}"
+    if logged_in?
+      @student = Student.create(params)
+      redirect "/students/#{@student.id}"
+    else
+      redirect "/login"
+    end
   end
 
   get "/students/:id" do
-    @student = Student.find(params[:id])
-    erb :"/students/show.html"
+    if logged_in?
+      @student = Student.find(params[:id])
+      erb :"/students/show.html"
+    else
+      redirect "/login"
+    end
   end
 
   get "/students/:id/edit" do
-    @student = Student.find(params[:id])
-    erb :"/students/edit.html"
+    if logged_in?
+      @student = Student.find(params[:id])
+      erb :"/students/edit.html"
+    else
+      redirect "/login"
+    end
   end
 
   patch "/students/:id" do
-    @student = Student.find(params[:id])
-    @student.update(params[:student])
-
-    # move to lessons.new
-    # if !params[:lesson][:time].empty? && !params[:lesson][:day].empty? && !params[:lesson][:campus].empty? && !params[:lesson][:teacher_id].empty?
-    #   @student.lessons << Lesson.create(params[:lesson])
-    # end
-
-    @student.save
-
-    redirect "/students/#{@student.id}"
+    if logged_in?
+      @student = Student.find(params[:id])
+      @student.update(params[:student])
+      @student.save
+      redirect "/students/#{@student.id}" 
+    else
+      redirect "/login"
+    end
   end
 
   # Should also delete any lessons of this student
   delete "/students/:id/delete" do
-    @student = Student.find(params[:id])
-    # @student.lessons.delete
-    @student.delete
-    redirect "/students"
+    if logged_in?
+      @student = Student.find(params[:id])
+      # @student.lessons.delete
+      @student.delete
+      redirect "/students"
+    else
+      redirect "/login"
+    end
   end
 end
