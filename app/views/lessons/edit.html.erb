@@ -1,1 +1,28 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Edit Lesson</h1>
+
+<form action="/lessons/<%= @lesson.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="patch">
+    <label for="lesson[time]">Time: </label>
+    <input type="text" name="lesson[time]" value="<%= @lesson.time %>">
+    <br>
+    <br>
+    <label for="lesson[day]">Day: </label>
+    <input type="text" name="lesson[day]"  value="<%= @lesson.day %>">
+    <br>
+    <br>
+    <h4>Campus</h4>
+    <% Admin.all.each do |a| %>
+        <input type="radio" name="lesson[campus]" value="<%= a.campus %>"  <%='checked' if @lesson.campus == a.campus %>><%= a.campus %></input><br>
+    <% end %>
+    <br>
+    <h4>Current Lesson Teachers</h4>
+    <% Teacher.all.each do |t| %>
+        <input type="radio" name="lesson[teacher_id]" id="<%= t.id %>" value="<%= t.id %>" <%='checked' if @lesson.teacher_id == t.id %>><%= t.name %> - <%= t.admin.campus %></input><br>
+    <% end %>
+    <br>
+    <h4>Current Students</h4>
+    <% Student.all.each do |s| %>
+        <input type="radio" name="lesson[student_id]" id="<%= s.id %>" value="<%= s.id %>"  <%='checked' if @lesson.student_id == s.id %>><%= s.name %></input><br>
+    <% end %>
+    <input type="submit" value="Submit" id="submit">
+</form>
