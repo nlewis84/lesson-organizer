@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20210111005408) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name"
+    t.string   "campus"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false

@@ -5,6 +5,10 @@
     <input type="text" name="name">
     <br>
     <br>
+    <label for="email">Email: </label>
+    <input type="text" name="email">
+    <br>
+    <br>
     <h3>Current Admin</h3>
     <% Admin.all.each do |a| %>
         <input type="radio" name="admin_id" id="<%= a.id %>" value="<%= a.id %>"><%= a.name %> - <%= a.students.first.lessons.first.campus %></input><br>

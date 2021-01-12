@@ -1,6 +1,6 @@
-Admin.create!(name: 'Nathan Lewis', email: 'nathan_lewis@school.com', password_digest: "#{Admin.digest('drums123')}")
-Admin.create!(name: 'John Smith', email: 'john_smith@school.com', password_digest: "#{Admin.digest('trumpet123')}" )
-Admin.create!(name: 'Prithi Gupta', email: 'prithi_gupta@school.com', password_digest: "#{Admin.digest('oboe123')}" )
+Admin.create!(name: 'Nathan Lewis', campus: "Dragonstone MS", email: 'nathan_lewis@school.com', password_digest: "#{Admin.digest('drums123')}")
+Admin.create!(name: 'John Smith', campus: "Winterfell HS", email: 'john_smith@school.com', password_digest: "#{Admin.digest('trumpet123')}" )
+Admin.create!(name: 'Prithi Gupta', campus: "Eyrie HS", email: 'prithi_gupta@school.com', password_digest: "#{Admin.digest('oboe123')}" )
 
 Teacher.create!(name: 'Jon Snow', email: 'lord_crow@school.com', admin_id: 1  )
 Teacher.create!(name: 'Oberyn Martell', email: 'red_viper@school.com', admin_id: 1  )
