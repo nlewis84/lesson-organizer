@@ -10,7 +10,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-     if logged_in?
+    if logged_in?
 	 		redirect "/admins/home"
 	 	else
 	 		redirect "/login"
@@ -26,6 +26,7 @@ class ApplicationController < Sinatra::Base
     def admin?
       !!session[:admin]
     end
+    # End of old code
 
     def user_has_access?
       session[:teacher_id] == params[:id]
