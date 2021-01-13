@@ -1,5 +1,5 @@
 <h1><%= @teacher.name %></h1>
-<p>List of all students who study with <%= @teacher.name %>.</p>
+<p>List of all students from <strong><%= @teacher.admin.campus %></strong> who study with <strong><%= @teacher.name %></strong>.</p>
 
 <% @teacher.lessons.each do |l| %>
 <div>
