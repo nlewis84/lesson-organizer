@@ -62,11 +62,9 @@ class StudentsController < ApplicationController
     end
   end
 
-  # Should also delete any lessons of this student
   delete "/students/:id/delete" do
     if logged_in?
       @student = Student.find(params[:id])
-      # @student.lessons.delete
       @student.delete
       redirect "/students"
     else
