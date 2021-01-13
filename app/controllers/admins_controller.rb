@@ -43,7 +43,6 @@ class AdminsController < ApplicationController
   
   end
 
-  # This may need to get moved further up the file
   get '/admins/home' do
     if logged_in?
       @admin = Admin.find(session[:admin_id])

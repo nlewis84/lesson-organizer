@@ -19,7 +19,6 @@ class TeachersController < ApplicationController
   post "/teachers" do
     if logged_in?
       @teacher = Teacher.create(params)
-      # session[:teacher_id] = @teacher.id
       redirect "/teachers"
     else
       redirect "/login"
@@ -59,6 +58,7 @@ class TeachersController < ApplicationController
       @teacher = Teacher.find(params[:id])
       # @teacher.lessons.delete
       @teacher.delete
+      binding.pry
       redirect "/teachers"
     else
       redirect "/login"

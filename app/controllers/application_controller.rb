@@ -22,12 +22,6 @@ class ApplicationController < Sinatra::Base
       !!session[:admin_id]
     end
 
-    # Old code....can probably delete....look around to make sure.
-    def admin?
-      !!session[:admin]
-    end
-    # End of old code
-
     def user_has_access?
       session[:teacher_id] == params[:id]
     end
