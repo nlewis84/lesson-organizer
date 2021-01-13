@@ -19,7 +19,7 @@ class AdminsController < ApplicationController
   end
 
   get "/login" do
-    erb :login
+    erb :"/admins/login.html"
   end
 
   post "/login" do
