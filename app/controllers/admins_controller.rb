@@ -33,14 +33,6 @@ class AdminsController < ApplicationController
     end
   end
 
-  # get "/success" do
-  #   if logged_in?
-	# 		redirect "/admins/home"
-	# 	else
-	# 		redirect "/login"
-	# 	end
-	# end
-
   get "/logout" do
     if logged_in?
       session.destroy
