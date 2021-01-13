@@ -1,20 +1,25 @@
 <h1><%= @student.name %></h1>
-<p>List of all lessons for <%= @student.name %>.</p>
 
-<% @student.lessons.each do |l| %>
-<div>
-  <a href="/teachers/<%= l.teacher.id %>">
-    <h3>Teacher: <%= l.teacher.name %></h3>
-  </a>
-  <p><%= l.campus %><br>
-    <%= l.day %><br>
-    <%= l.time %><br>
-    <a href="/lessons/<%= l.id %>/edit">
-      <button>Edit Lesson</button>
+<% if !@student.teacher %>
+  <p>No lessons scheduled</p>
+<% else %>
+  <p>List of all lessons for <%= @student.name %>.</p>
+  <% @student.lessons.each do |l| %>
+  <div>
+    <a href="/teachers/<%= l.teacher.id %>">
+      <h3>Teacher: <%= l.teacher.name %></h3>
     </a>
-  </p>
-</div>
+    <p><%= l.campus %><br>
+      <%= l.day %><br>
+      <%= l.time %><br>
+      <a href="/lessons/<%= l.id %>/edit">
+        <button>Edit Lesson</button>
+      </a>
+    </p>
+  </div>
+  <% end %>
 <% end %>
+
 <hr>
 <br>
 <a href="/students/<%= @student.id%>/edit">

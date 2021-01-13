@@ -37,7 +37,11 @@ class LessonsController < ApplicationController
   get "/lessons/:id/edit" do
     if logged_in?
       @lesson = Lesson.find(params[:id])
-      erb :"/lessons/edit.html"
+      if @lesson && @lesson.student.admin == current_user
+        erb :"/lessons/edit.html"
+      else
+        redirect "/lessons"
+      end
     else
       redirect "/login"
     end
