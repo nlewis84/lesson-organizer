@@ -37,15 +37,11 @@ class StudentsController < ApplicationController
   get "/students/:id/edit" do
     if logged_in?
       @student = Student.find(params[:id])
-      ## start
       if @student && @student.admin == current_user
-      ## end
         erb :"/students/edit.html"
-      ## start
       else
         redirect "/students"
       end
-      ## end
     else
       redirect "/login"
     end
