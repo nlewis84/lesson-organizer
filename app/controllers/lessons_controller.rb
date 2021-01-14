@@ -19,6 +19,13 @@ class LessonsController < ApplicationController
   post "/lessons" do
     if logged_in?
       @lesson = Lesson.create(params)
+      @student = Student.find(params[:student_id])
+      if !@student.teacher
+        @teacher = Teacher.find(params[:teacher_id])
+        @student.teacher = @teacher
+        @student.save
+      end
+      @student.save
       redirect "/admins/home"
     else
       redirect "/login"
