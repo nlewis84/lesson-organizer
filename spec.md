@@ -8,10 +8,10 @@ Specs:
 - [x] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User) - Lessons belongs_to Student, Lessons belongs_to Teacher, Student belongs_to Teacher, Student belongs to Admin, Teacher belongs_to Admin
 - [x] Include user accounts with unique login attribute (username or email) - Email used
 - [x] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying - Can CRUD Teacher, Student, and Lesson
-- [ ] Ensure that users can't modify content created by other users
-- [ ] Include user input validations
+- [x] Ensure that users can't modify content created by other users
+- [x] Include user input validations
 - [ ] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
-- [ ] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
+- [x] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
 
 Confirm
 - [x] You have a large number of small Git commits
