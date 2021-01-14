@@ -1,1 +1,12 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h1><%= @admin.name %></h1>
+
+<div>
+    Email: <%= @admin.email %>
+</div>
+<br>
+<hr>
+<br>
+<form method="post" action="/admins/<%= @admin.id %>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="DELETE ADMIN">
+</form>

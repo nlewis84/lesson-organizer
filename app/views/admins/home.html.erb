@@ -1,7 +1,7 @@
 <h1>Welcome, <%= @admin.name%>!</h1>
 
 <div>
-    <a href="/admins/edit"><button>Edit current Admin</button></a>
+    <a href="/admins/<%= @admin.id %>"><button>Admin Settings</button></a>
 </div>
 
 <div class="teachers">

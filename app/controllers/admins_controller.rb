@@ -52,10 +52,14 @@ class AdminsController < ApplicationController
     end
   end
 
-  # get '/admins/edit' do
-  #   @admin = Admin.find(params)
-  #   erb :"/admins/edit.html"
-  # end
+  get "/admins/:id" do
+    if logged_in?
+      @admin = Admin.find(params[:id])
+      erb :"/admins/show.html"
+    else
+      redirect "/login"
+    end
+  end
 
   # post "/lessons" do
   #   if logged_in?
