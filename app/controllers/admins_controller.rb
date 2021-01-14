@@ -52,15 +52,6 @@ class AdminsController < ApplicationController
     end
   end
 
-  # post "/lessons" do
-  #   if logged_in?
-  #     @lesson = Lesson.create(params)
-  #     redirect "/admins/home"
-  #   else
-  #     redirect "/login"
-  #   end
-  # end
-
   get "/admins/:id" do
     if logged_in?
       @admin = Admin.find(params[:id])
@@ -70,27 +61,27 @@ class AdminsController < ApplicationController
     end
   end
 
-  # get "/lessons/:id/edit" do
-  #   if logged_in?
-  #     @lesson = Lesson.find(params[:id])
-  #     if @lesson && @lesson.student.admin == current_user
-  #       erb :"/lessons/edit.html"
-  #     else
-  #       redirect "/lessons"
-  #     end
-  #   else
-  #     redirect "/login"
-  #   end
-  # end
+  get "/admins/:id/edit" do
+    if logged_in?
+      @admin = Admin.find(params[:id])
+      if @admin && @admin == current_user
+        erb :"/admins/edit.html"
+      else
+        redirect "/admins/home"
+      end
+    else
+      redirect "/login"
+    end
+  end
 
-  # patch "/lessons/:id" do
-  #   if logged_in?
-  #     @lesson = Lesson.find(params[:id])
-  #     @lesson.update(params[:lesson])
-  #     redirect "/lessons/#{@lesson.id}"
-  #   else
-  #     redirect "/login"
-  #   end
-  # end
+  patch "/admins/:id" do
+    if logged_in?
+      @admin = Admin.find(params[:id])
+      @admin.update(params[:admin])
+      redirect "/admins/home"
+    else
+      redirect "/login"
+    end
+  end
 
 end

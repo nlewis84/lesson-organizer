@@ -1,10 +1,17 @@
 <h1><%= @admin.name %></h1>
 
 <div>
-    <%= @admin.email %>
+  <%= @admin.campus %><br>
+  <%= @admin.email %>
 </div>
 <br>
+
 <hr>
+<br>
+<a href="/admins/<%= @admin.id%>/edit">
+  <button>Edit Admin</button>
+</a>
+<br>
 <br>
 <form method="post" action="/admins/<%= @admin.id %>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
