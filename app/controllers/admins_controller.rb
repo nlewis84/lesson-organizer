@@ -52,4 +52,50 @@ class AdminsController < ApplicationController
     end
   end
 
+  # get '/admins/edit' do
+  #   @admin = Admin.find(params)
+  #   erb :"/admins/edit.html"
+  # end
+
+  # post "/lessons" do
+  #   if logged_in?
+  #     @lesson = Lesson.create(params)
+  #     redirect "/admins/home"
+  #   else
+  #     redirect "/login"
+  #   end
+  # end
+
+  # get "/lessons/:id" do
+  #   if logged_in?
+  #     @lesson = Lesson.find(params[:id])
+  #     erb :"/lessons/show.html"
+  #   else
+  #     redirect "/login"
+  #   end
+  # end
+
+  # get "/lessons/:id/edit" do
+  #   if logged_in?
+  #     @lesson = Lesson.find(params[:id])
+  #     if @lesson && @lesson.student.admin == current_user
+  #       erb :"/lessons/edit.html"
+  #     else
+  #       redirect "/lessons"
+  #     end
+  #   else
+  #     redirect "/login"
+  #   end
+  # end
+
+  # patch "/lessons/:id" do
+  #   if logged_in?
+  #     @lesson = Lesson.find(params[:id])
+  #     @lesson.update(params[:lesson])
+  #     redirect "/lessons/#{@lesson.id}"
+  #   else
+  #     redirect "/login"
+  #   end
+  # end
+
 end
