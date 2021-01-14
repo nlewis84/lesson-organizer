@@ -61,7 +61,7 @@ class StudentsController < ApplicationController
   delete "/students/:id/delete" do
     if logged_in?
       @student = Student.find(params[:id])
-      binding.pry
+      @student.lessons.each { |l| l.destroy }
       @student.delete
       redirect "/students"
     else
