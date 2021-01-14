@@ -25,4 +25,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the PercussionEnsembles project's codebases, and issue trackers is expected to follow the [code of conduct](https://github.com/nlewis84/percussion_ensemble/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the PercussionEnsembles project's codebases, and issue trackers is expected to follow the [code of conduct](https://github.com/nlewis84/lesson-organizer/blob/master/CODE_OF_CONDUCT.md).
