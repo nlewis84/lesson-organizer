@@ -40,7 +40,6 @@ class AdminsController < ApplicationController
 	 	else
 	 		redirect "/"
 	 	end
-  
   end
 
   get '/admins/home' do

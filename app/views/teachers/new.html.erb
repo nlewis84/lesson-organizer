@@ -11,7 +11,7 @@
     <br>
     <h3>Current Admin</h3>
     <% Admin.all.each do |a| %>
-        <input type="radio" name="admin_id" id="<%= a.id %>" value="<%= a.id %>"><%= a.name %> - <%= a.students.first.lessons.first.campus %></input><br>
+        <input type="radio" name="admin_id" id="<%= a.id %>" value="<%= a.id %>"><%= a.name %> - <%= a.campus %></input><br>
     <% end %>
     <input type="submit" value="Submit" id="submit">
 </form>

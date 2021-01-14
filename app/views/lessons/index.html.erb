@@ -1,6 +1,7 @@
 <h1>Lessons</h1>
 
 <% Lesson.all.each do |l| %>
+
 <div>
     <a href="/lessons/<%= l.id %>">
         <h3><%= l.student.name %></h3>
