@@ -1,19 +1,24 @@
-<h1>Lessons</h1>
+<div class="wrapper a">
+    <h1>Lessons</h1>
 
-<% Lesson.all.each do |l| %>
+    <% Lesson.all.each do |l| %>
 
-<div>
-    <a href="/lessons/<%= l.id %>">
-        <h3><%= l.student.name %></h3>
+    <div>
+        <h3>
+            <a href="/lessons/<%= l.id %>">
+                <%= l.student.name %>
+            </a>
+        </h3>
+        
+        <p><%= l.teacher.name %><br>
+        <%= l.campus %><br>
+        <%= l.day %><br>
+        <%= l.time %></p>
+    </div>
+    <% end %>
+    <br>
+    <br>
+    <a href="/students/new">
+        <button>New Student</button>
     </a>
-    <p><%= l.teacher.name %><br>
-    <%= l.campus %><br>
-    <%= l.day %><br>
-    <%= l.time %></p>
 </div>
-<% end %>
-<br>
-<br>
-<a href="/students/new">
-    <button>New Student</button>
-</a>

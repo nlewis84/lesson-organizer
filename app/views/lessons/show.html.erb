@@ -1,19 +1,21 @@
-<h1>Selected Lesson</h1>
-<p>Edit or delete this lesson below</p>
+<div class="wrapper-single">
+  <h1>Selected Lesson</h1>
+  <p>Edit or delete this lesson below</p>
 
-<div>
-    <h3>Student: <%= @lesson.student.name %></h3>
-    <p><%= @lesson.teacher.name %><br>
-    <%= @lesson.campus %><br>
-    <%= @lesson.day %><br>
-    <%= @lesson.time %></p>
+  <div>
+      <h3>Student: <%= @lesson.student.name %></h3>
+      <p><%= @lesson.teacher.name %><br>
+      <%= @lesson.campus %><br>
+      <%= @lesson.day %><br>
+      <%= @lesson.time %></p>
+  </div>
+  <a href="/lessons/<%= @lesson.id%>/edit">
+      <button>Edit Lesson</button>
+  </a>
+  <br>
+  <br>
+  <form method="post" action="/lessons/<%= @lesson.id %>/delete">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="DELETE LESSON">
+  </form>
 </div>
-<a href="/lessons/<%= @lesson.id%>/edit">
-    <button>Edit Lesson</button>
-</a>
-<br>
-<br>
-<form method="post" action="/lessons/<%= @lesson.id %>/delete">
-  <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="DELETE LESSON">
-</form>

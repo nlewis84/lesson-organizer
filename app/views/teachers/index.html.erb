@@ -1,15 +1,20 @@
-<h1>Teachers</h1>
+<div class="wrapper">
+    <h1>Teachers</h1>
 
-<% Teacher.all.each do |t| %>
-<a href="/teachers/<%= t.id %>">
+    <% Teacher.all.each do |t| %>
+    
     <div>
-        <%= t.name %>
+        <a href="/teachers/<%= t.id %>">
+            <%= t.name %>
+        </a>
         <br>
         <br>
-    <div>
-</a>
-<% end %>
+        <br>
+        <br>
+    </div>
+    <% end %>
 
-<a href="/teachers/new">
-    <button>Add a New Teacher</button>
-</a>
+    <a href="/teachers/new">
+        <button>Add a New Teacher</button>
+    </a>
+</div>

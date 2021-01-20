@@ -1,38 +1,42 @@
-<h1><%= @student.name %></h1>
+<div class="wrapper-single">
+  <h1><%= @student.name %></h1>
 
-<% if !@student.teacher %>
-  <p>No lessons scheduled</p>
-<% else %>
-  <p>List of all lessons for <%= @student.name %>.</p>
-  <% @student.lessons.each do |l| %>
-  <div>
-    <a href="/teachers/<%= l.teacher.id %>">
-      <h3>Teacher: <%= l.teacher.name %></h3>
-    </a>
-    <p><%= l.campus %><br>
-      <%= l.day %><br>
-      <%= l.time %><br>
-      <a href="/lessons/<%= l.id %>/edit">
-        <button>Edit Lesson</button>
-      </a>
-    </p>
-  </div>
+  <% if !@student.teacher %>
+    <p>No lessons scheduled</p>
+  <% else %>
+    <p>List of all lessons for <%= @student.name %>.</p>
+    <% @student.lessons.each do |l| %>
+    <div>
+      <h3>
+        <a href="/teachers/<%= l.teacher.id %>">
+          Teacher: <%= l.teacher.name %>
+        </a>
+      </h3>
+      <p><%= l.campus %><br>
+        <%= l.day %><br>
+        <%= l.time %><br>
+        <a href="/lessons/<%= l.id %>/edit">
+          <button>Edit Lesson</button>
+        </a>
+      </p>
+    </div>
+    <% end %>
   <% end %>
-<% end %>
 
-<hr>
-<br>
-<a href="/students/<%= @student.id%>/edit">
-  <button>Edit Student</button>
-</a>
-<br>
-<br>
-<a href="/lessons/new">
-  <button>Add a New Lesson</button>
-</a>
-<br>
-<br>
-<form method="post" action="/students/<%= @student.id %>/delete">
-  <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="DELETE STUDENT">
-</form>
+  <hr>
+  <br>
+  <a href="/students/<%= @student.id%>/edit">
+    <button>Edit Student</button>
+  </a>
+  <br>
+  <br>
+  <a href="/lessons/new">
+    <button>Add a New Lesson</button>
+  </a>
+  <br>
+  <br>
+  <form method="post" action="/students/<%= @student.id %>/delete">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="DELETE STUDENT">
+  </form>
+</div>

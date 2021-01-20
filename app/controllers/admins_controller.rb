@@ -4,7 +4,7 @@ class AdminsController < ApplicationController
     if logged_in?
       redirect '/admins/home'
     else
-      erb :"/admins/new.html"
+      erb :"/admins/login.html"
     end
   end
 

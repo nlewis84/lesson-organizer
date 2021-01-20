@@ -1,21 +1,20 @@
-<h1>New Student</h1>
+<div class="wrapper-single">
+    <h1>New Student</h1>
 
-<form action="/students" method="POST">
-    <label for="name">Student Name: </label>
-    <input type="text" name="name">
-    <br>
-    <br>
-    <label for="grade">Grade: </label>
-    <input type="text" name="grade">
-    <br>
-    <br>
-    <label for="email">Email: </label>
-    <input type="text" name="email">
-    <br>
-    <br>
-    <h3>Campus</h3>
-    <% Admin.all.each do |a| %>
-        <input type="radio" name="admin_id" id="<%= a.id %>" value="<%= a.id %>"><%= a.campus %></input><br>
-    <% end %>
-    <input type="submit" value="Submit" id="submit">
-</form>
+    <form action="/students" method="POST">
+        <label for="name">Student Name: </label><br>
+        <input type="text" name="name"><br>
+        <br>
+        <label for="grade">Grade: </label><br>
+        <input type="text" name="grade"><br>
+        <br>
+        <label for="email">Email: </label><br>
+        <input type="text" name="email"><br>
+        <br>
+        <h3>Campus</h3>
+        <% Admin.all.each do |a| %>
+            <input type="radio" name="admin_id" id="<%= a.id %>" value="<%= a.id %>"><%= a.campus %></input><br>
+        <% end %>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+</div>

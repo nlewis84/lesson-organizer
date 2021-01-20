@@ -1,48 +1,54 @@
-<h1>Welcome, <%= @admin.name%>!</h1>
+<div class="wrapper">
 
-<div>
-    <a href="/admins/<%= @admin.id %>"><button>Admin Settings</button></a>
+    <div class="welcome c">
+    <h1>Welcome, <%= @admin.name%>!</h1>
+        <div>
+            <a href="/admins/<%= @admin.id %>"><button>Admin Settings</button></a>
+        </div>
+    </div>
 </div>
 
-<div class="teachers">
-<h2>Teachers</h2>
+<div class="wrapper">
+    <div class="teachers a">
+        <h2>Teachers</h2>
 
-<% @admin.teachers.all.each do |t| %>
-    <a href="/teachers/<%= t.id %>">
-        <div>
-            <%= t.name %>
-            <br>
-            <br>
-        <div>
-    </a>
-    <% end %>
-    <a href="/teachers/new">
-        <button>Add a New Teacher</button>
-    </a>
-</div>
+    <% @admin.teachers.all.each do |t| %>
+        <a href="/teachers/<%= t.id %>">
+            <div>
+                <%= t.name %>
+                <br>
+                <br>
+            </div>
+        </a>
+        <% end %>
+        <a href="/teachers/new">
+            <button>Add a New Teacher</button>
+        </a>
+    </div>
 
-<div class="students">
-<h2>Students</h2>
-    <% @admin.students.all.each do |s| %>
-    <a href="/students/<%= s.id %>">
-        <div>
-            <%= s.name %>
-            <br>
-            <br>
-        <div>
-    </a>
-    <% end %>
-    <a href="/students/new">
-        <button>Add a New Student</button>
-    </a>
-</div>
+    <div class="students b">
+        <h2>Students</h2>
+        <% @admin.students.all.each do |s| %>
+        <a href="/students/<%= s.id %>">
+            <div>
+                <%= s.name %>
+                <br>
+                <br>
+            </div>
+        </a>
+        <% end %>
+        <a href="/students/new">
+            <button>Add a New Student</button>
+        </a>
+    </div>
 
-<div class="lessons">
-<h2>Lessons</h2>
-    <a href="/lessons">
-        <button>See a list of all lessons!</button>
-    </a><br><br>
-    <a href="/lessons/new">
-        <button>Add a New Lesson</button>
-    </a>
+    <div class="lessons c">
+        <h2>Lessons</h2>
+        <a href="/lessons">
+            <button>See a list of all lessons!</button>
+        </a><br><br>
+        <a href="/lessons/new">
+            <button>Add a New Lesson</button>
+        </a>
+    </div>
 </div>

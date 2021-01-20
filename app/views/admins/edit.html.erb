@@ -1,18 +1,17 @@
-<h1>Edit Admin</h1>
+<div class="wrapper-single">
+    <h1>Edit Admin</h1>
 
-<form action="/admins/<%= @admin.id %>" method="POST">
-    <input id="hidden" type="hidden" name="_method" value="patch">
-    <label for="admin[name]">Name: </label>
-    <input type="text" name="admin[name]" value="<%= @admin.name %>">
-    <br>
-    <br>
-    <label for="admin[campus]">Campus: </label>
-    <input type="text" name="admin[campus]"  value="<%= @admin.campus %>">
-    <br>
-    <br>
-    <label for="admin[email]">Email: </label>
-    <input type="text" name="admin[email]"  value="<%= @admin.email %>">
-    <br>
-    <br>
-    <input type="submit" value="Submit" id="submit">
-</form>
+    <form action="/admins/<%= @admin.id %>" method="POST">
+        <input id="hidden" type="hidden" name="_method" value="patch"><br>
+        <label for="admin[name]">Name: </label><br>
+        <input type="text" name="admin[name]" value="<%= @admin.name %>"><br>
+        <br>
+        <label for="admin[campus]">Campus: </label><br>
+        <input type="text" name="admin[campus]"  value="<%= @admin.campus %>"><br>
+        <br>
+        <label for="admin[email]">Email: </label><br>
+        <input type="text" name="admin[email]"  value="<%= @admin.email %>"><br>
+        <br>
+        <input type="submit" value="Submit" id="submit">
+    </form>
+</div>

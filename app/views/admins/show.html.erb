@@ -1,13 +1,15 @@
-<h1><%= @admin.name %></h1>
+<div class="wrapper-single">
+  <h1><%= @admin.name %></h1>
 
-<div>
-  <%= @admin.campus %><br>
-  <%= @admin.email %>
+  <div>
+    <%= @admin.campus %><br>
+    <%= @admin.email %>
+  </div>
+  <br>
+
+  <hr>
+  <br>
+  <a href="/admins/<%= @admin.id%>/edit">
+    <button>Edit Admin</button>
+  </a>
 </div>
-<br>
-
-<hr>
-<br>
-<a href="/admins/<%= @admin.id%>/edit">
-  <button>Edit Admin</button>
-</a>

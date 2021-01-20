@@ -1,14 +1,14 @@
-<h1>Edit Teacher</h1>
+<div class="wrapper-single">
+    <h1>Edit Teacher</h1>
 
-<form action="/teachers/<%= @teacher.id %>" method="POST">
-    <input id="hidden" type="hidden" name="_method" value="patch">
-    <label for="name">Teacher Name: </label>
-    <input type="text" name="teacher[name]" value="<%= @teacher.name %>">
-    <br>
-    <br>
-    <label for="email">Email: </label>
-    <input type="text" name="teacher[email]" value="<%= @teacher.email %>">
-    <br>
-    <br>
-    <input type="submit" value="Update Teacher">
-</form>
+    <form action="/teachers/<%= @teacher.id %>" method="POST">
+        <input id="hidden" type="hidden" name="_method" value="patch">
+        <label for="name">Teacher Name: </label><br>
+        <input type="text" name="teacher[name]" value="<%= @teacher.name %>"><br>
+        <br>
+        <label for="email">Email: </label><br>
+        <input type="text" name="teacher[email]" value="<%= @teacher.email %>"><br>
+        <br>
+        <input type="submit" value="Update Teacher">
+    </form>
+</div>

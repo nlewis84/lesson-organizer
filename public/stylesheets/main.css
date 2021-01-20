@@ -13,10 +13,14 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    background: linear-gradient(0.25turn, #8d176e, #00107f);
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
+  }
+
+  .notification {
+    text-align: right;
   }
 
   .wrapper {
@@ -28,6 +32,21 @@
     max-width: 960px;
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
+    display: grid;
+    grid-template: "a b c";
+    border-radius: 5px;
+  }
+
+  .wrapper-single {
+    background: #fff;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 16px auto;
+    max-width: 960px;
+    padding: 2.25%; /* 18px / 800px */
+    width: 85%;
+    border-radius: 5px;
   }
 
   h1 {
@@ -74,12 +93,6 @@
 
   .branding {
     clear: both;
-  }
-
-  footer.branding {
-    border-top: 2px solid #ccc;
-    margin-top: 20px;
-    padding-top: 20px;
   }
 }
 
