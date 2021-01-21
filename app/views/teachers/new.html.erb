@@ -2,16 +2,18 @@
     <h1>New Teacher</h1>
 
     <form action="/teachers" method="POST">
-        <label for="name">Teacher Name: </label><br>
-        <input type="text" name="name"><br>
-        <br>
-        <label for="email">Email: </label><br>
-        <input type="text" name="email"><br>
-        <br>
+        <label for="name">Teacher Name: </label>
+        <input type="text" name="name">
+        
+        <label for="email">Email: </label>
+        <input type="text" name="email">
+        
         <h3>Current Admin</h3>
         <% Admin.all.each do |a| %>
             <input type="radio" name="admin_id" id="<%= a.id %>" value="<%= a.id %>"><%= a.name %> - <%= a.campus %></input><br>
         <% end %>
-        <input type="submit" value="Submit" id="submit">
+        <br>
+        
+        <input class="submit" type="submit" value="Submit" id="submit">
     </form>
 </div>

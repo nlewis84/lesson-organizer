@@ -10,11 +10,12 @@
     height: 100%;
     width: 100%;
     font-size: 10px;
+    letter-spacing: 1px;
   }
 
   /* --- Welcome Page Styles --- */
   body {
-    background: linear-gradient(0.25turn, #8d176e, #00107f);
+    background: linear-gradient(0.25turn, #178d8d, #00107f);
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
@@ -72,26 +73,50 @@
     font-size: 1.563rem;
   }
 
-  button {
+  button, input.submit {
       font-size: 1.563rem;
       display: inline-block;
       padding: 0.35em 1.2em;
-      border:0.1em solid #FFFFFF;
-      margin:0 0.3em 0.3em 0;
-      border-radius:0.5em;
+      border: 0.1em solid #FFFFFF;
+      margin: 0.5rem 0;
+      border-radius: 0.5em;
       box-sizing: border-box;
-      text-decoration:none;
-      font-family:'Roboto',sans-serif;
-      font-weight:300;
-      color:#fff;
+      text-decoration: none;
+      font-family: 'Roboto',sans-serif;
+      font-weight: 300;
+      color: #fff;
       background-color: #3d467e;
-      text-align:center;
-      transition: all 0.5s;
+      text-align: center;
+      transition: all 0.2s;
+      outline: none;
   }
 
-  button:hover {
+  button:hover, input.submit:hover{
       color:#FFF;
-      background-color:#8d176e;
+      background-color:#178d8d;
+      margin: 0.5rem 0;
+      box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+      transform: scale(1.05);
+  }
+
+  button:active, input.submit:active { 
+    box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.95);
+  } 
+
+  input[type=text] {
+    display: block;
+    margin: 5px 0;
+  }
+
+  input[type=password] {
+    display: block;
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
   }
 
   div {

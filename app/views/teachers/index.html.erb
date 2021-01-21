@@ -4,9 +4,11 @@
     <% Teacher.all.each do |t| %>
     
     <div>
-        <a href="/teachers/<%= t.id %>">
-            <%= t.name %>
-        </a>
+        <h3>
+            <a href="/teachers/<%= t.id %>">
+                <%= t.name %>
+            </a>
+        </h3>
         <br>
         <br>
         <br>

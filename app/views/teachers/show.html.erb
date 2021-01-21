@@ -7,9 +7,11 @@
     <p>List of all students from <strong><%= @teacher.admin.campus %></strong> who study with <strong><%= @teacher.name %></strong>.</p>
     <% @teacher.lessons.each do |l| %>
     <div>
-      <a href="/students/<%= l.student.id %>">
-        <h3>Student: <%= l.student.name %></h3>
-      </a>
+      <h3>
+        <a href="/students/<%= l.student.id %>">
+          Student: <%= l.student.name %>
+        </a>
+      </h3>
       <p><%= l.student.email %><br>
         <%= l.student.grade %>th Grade<br>
         <%= l.campus %><br>
@@ -37,6 +39,6 @@
   <br>
   <form method="post" action="/teachers/<%= @teacher.id %>/delete">
     <input id="hidden" type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="DELETE TEACHER">
+    <input class="submit" type="submit" value="DELETE TEACHER">
   </form>
 </div>

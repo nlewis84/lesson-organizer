@@ -3,20 +3,21 @@
 
     <form action="/students/<%= @student.id %>" method="POST">
         <input id="hidden" type="hidden" name="_method" value="patch">
-        <label for="name">Student Name: </label><br>
-        <input type="text" name="student[name]" value="<%= @student.name %>"><br>
-        <br>
-        <label for="grade">Grade: </label><br>
-        <input type="text" name="student[grade]" value="<%= @student.grade %>"><br>
-        <br>
-        <label for="email">Email: </label><br>
-        <input type="text" name="student[email]" value="<%= @student.email %>"><br>
-        <br>
+        <label for="name">Student Name: </label>
+        <input type="text" name="student[name]" value="<%= @student.name %>">
+        
+        <label for="grade">Grade: </label>
+        <input type="text" name="student[grade]" value="<%= @student.grade %>">
+        
+        <label for="email">Email: </label>
+        <input type="text" name="student[email]" value="<%= @student.email %>">
+        
         <h3>Current Admin</h3>
         <% Admin.all.each do |a| %>
             <input type="radio" name="student[admin_id]" id="<%= a.id %>" value="<%= a.id %>" <%='checked' if @student.admin_id == a.id %>><%= a.campus %></input><br>
         <% end %>
         <br>
-        <input type="submit" value="Update Student">
+        
+        <input class="submit" type="submit" value="Update Student">
     </form>
 </div>
