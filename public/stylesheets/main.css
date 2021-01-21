@@ -17,7 +17,7 @@
   body {
     background: linear-gradient(0.25turn, #178d8d, #00107f);
     color: #333;
-    font-family: Sans-Serif;
+    font-family: 'Lato', sans-serif;
     line-height: 18px;
   }
 
@@ -56,6 +56,10 @@
     line-height: 54px;
   }
 
+  h1.big {
+    font-size: 4.768rem;
+  }
+
   h2 {
     border-bottom: 2px solid #ccc;
     font-size: 2.441rem;
@@ -82,7 +86,6 @@
       border-radius: 0.5em;
       box-sizing: border-box;
       text-decoration: none;
-      font-family: 'Roboto',sans-serif;
       font-weight: 300;
       color: #fff;
       background-color: #3d467e;
