@@ -14,10 +14,11 @@ Welcome to the Lesson Organizer wep application! This app was created using Sina
 - Run `rake db:seed` 
 - Run `shotgun`
 - Open your browser and navigate to the local url provided by the `shotgun` server
+- Use `john_smith@school.com:trumpet123` to see some seed data
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/nlewis84/lesson-organizer. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/nlewis84/lesson-organizer/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub [here](https://github.com/nlewis84/lesson-organizer). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/nlewis84/lesson-organizer/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
