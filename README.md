@@ -27,3 +27,5 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## :crayon: Code of Conduct
 
 Everyone interacting in the Lesson-Organizer project's codebases, and issue trackers is expected to follow the [code of conduct](https://github.com/nlewis84/lesson-organizer/blob/master/CODE_OF_CONDUCT.md).
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/cuoA9DI_w8g/0.jpg)](http://www.youtube.com/watch?v=cuoA9DI_w8g)
