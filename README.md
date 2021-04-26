@@ -5,6 +5,7 @@ Welcome to the Lesson Organizer wep application! This app was created using Sina
 ## :open_book: Demo 
 
 Click the picture below to see a video demo!
+
 [![Lesson Organizer Home Screen](http://img.youtube.com/vi/cuoA9DI_w8g/0.jpg)](http://www.youtube.com/watch?v=cuoA9DI_w8g)
 
 ## :student: Installation
