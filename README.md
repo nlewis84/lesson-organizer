@@ -3,6 +3,8 @@
 Welcome to the Lesson Organizer wep application! This app was created using Sinatra and ActiveRecord. It is an interface to organize Private Lessons between students and educators. In this iteration, the user holds an administrator role and may add teachers, students, or lessons. A login is required to access the website.
 
 ## :open_book: Demo 
+
+Click the picture below to see a video demo!
 [![Lesson Organizer Home Screen](http://img.youtube.com/vi/cuoA9DI_w8g/0.jpg)](http://www.youtube.com/watch?v=cuoA9DI_w8g)
 
 ## :student: Installation
